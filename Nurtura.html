@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Nurtura – Maternal Support, Guidance, and Care</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#FBF7F2;--card:#FFFFFF;--line:#E9DED5;--tx:#403632;--mut:#82746E;--sos:#C9828B;--vio:#8A9B83;--ok:#71866D;--r:20px;box-sizing:border-box}
+*{box-sizing:border-box;margin:0}html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{background:var(--bg);color:var(--tx);font:400 16px/1.6 'Plus Jakarta Sans',Inter,system-ui,sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}button{font:inherit;color:inherit;cursor:pointer;border:0;transition:transform .15s,background .2s,opacity .2s}button:active{transform:scale(.97)}
+.wrap{max-width:1080px;margin:auto;padding:0 20px}section{padding:76px 0}
+h1{font-size:clamp(2.2rem,7vw,4rem);line-height:1.1;font-weight:800;letter-spacing:-.03em}
+h2{font-size:clamp(1.6rem,4.5vw,2.4rem);font-weight:800;margin-bottom:8px}
+.grad{background:linear-gradient(90deg,var(--vio),var(--sos));-webkit-background-clip:text;background-clip:text;color:transparent}
+.sub{color:var(--mut);max-width:650px;margin-bottom:28px}.tag{display:inline-block;font-size:.75rem;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--vio);margin-bottom:10px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:22px;box-shadow:0 8px 28px rgba(87,65,54,.045)}
+.btn{min-height:48px;padding:0 22px;border-radius:999px;font-weight:600}.v{background:var(--vio);color:#fff}.s{background:var(--sos);color:#fff}
+nav{position:sticky;top:0;z-index:50;background:rgba(251,247,242,.9);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;gap:16px;height:66px}.logo{font-weight:800;font-size:1.2rem;margin-right:auto}.logo b{color:var(--sos)}
+.links{display:flex;gap:18px;font-size:.9rem;color:var(--mut)}.links a:hover{color:var(--tx)}@media(max-width:820px){.links{display:none}}
+.qe{background:var(--card);border:1px solid var(--line);min-height:40px;padding:0 14px;border-radius:999px;font-size:.85rem}
+.pill{background:var(--sos);color:#fff;min-height:40px;padding:0 16px;border-radius:999px;font-weight:800;font-size:.85rem}
+.hero{text-align:center;padding-top:76px}.hero .sub{margin:18px auto 30px}
+.row{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}@media(max-width:760px){.grid2{grid-template-columns:1fr}}
+.hint{font-size:.82rem;color:var(--mut);margin-top:14px}.badge{display:inline-flex;gap:8px;align-items:center;background:rgba(113,134,109,.13);color:var(--ok);font-size:.8rem;font-weight:600;padding:6px 12px;border-radius:999px}
+.stage{text-align:left;min-height:190px;transition:border-color .2s,transform .2s}.stage:hover{transform:translateY(-3px);border-color:var(--vio)}
+.chatlog{min-height:130px;max-height:300px;overflow:auto;margin-bottom:14px}.chatbubble{margin:10px 0;padding:12px 14px;background:var(--bg);border-radius:14px}
+input[type=text],input[type=search]{width:100%;min-height:50px;background:var(--bg);color:var(--tx);border:1px solid var(--line);border-radius:14px;padding:0 16px;font:inherit;margin-bottom:12px}
+.chips{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px}.chip{background:var(--card);border:1px solid var(--line);min-height:42px;padding:0 14px;border-radius:999px;font-size:.86rem}.chip:hover,.chip.on{background:rgba(138,155,131,.14);border-color:var(--vio)}
+.steps{display:flex;gap:8px;margin-bottom:22px}.steps i{flex:1;height:6px;border-radius:9px;background:var(--line);transition:background .4s}.steps i.on{background:var(--vio)}
+.pane{display:none;animation:in .4s}.pane.show{display:block}@keyframes in{from{opacity:0;transform:translateX(18px)}to{opacity:1;transform:none}}
+.opt{display:block;width:100%;text-align:left;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-bottom:10px;min-height:52px}.opt.on{border-color:var(--vio);background:rgba(138,155,131,.12)}
+.bento{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:20px 0}@media(max-width:900px){.bento{grid-template-columns:1fr 1fr}}@media(max-width:520px){.bento{grid-template-columns:1fr}}
+.hl{display:flex;flex-direction:column;gap:6px}.hl .num{font-size:1.7rem;font-weight:800;color:var(--ok)}.hl a{margin-top:auto;text-align:center;line-height:42px;background:var(--ok);color:white;font-weight:800;border-radius:999px}
+details{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px 20px;margin-bottom:12px}summary{font-weight:600;cursor:pointer;list-style:none;display:flex;justify-content:space-between}summary::after{content:"+";color:var(--vio);font-size:1.3rem}details[open] summary::after{content:"−"}details p{color:var(--mut);margin-top:10px}
+footer{border-top:1px solid var(--line);padding:40px 0 60px;color:var(--mut);font-size:.9rem}.rv{opacity:0;transform:translateY(16px);transition:opacity .65s,transform .65s}.rv.in{opacity:1;transform:none}
+#call,#decoy{position:fixed;inset:0;z-index:100;display:none}#call{background:linear-gradient(#6D625D,#403632);color:#fff;flex-direction:column;align-items:center;justify-content:space-between;padding:90px 30px 70px;text-align:center}#call.show{display:flex;animation:in .4s}
+#call .av{width:100px;height:100px;border-radius:50%;display:grid;place-items:center;font-size:2.2rem;background:var(--vio);margin:0 auto 18px}.cb{width:68px;height:68px;border-radius:50%;font-size:1.5rem;color:#fff}
+#decoy{background:linear-gradient(#DDE7D8,#FBF7F2);color:var(--tx);padding:70px 24px;text-align:center}#decoy.show{display:block}#decoy h3{font-size:4rem}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<nav><div class="wrap">
+<a class="logo" href="#top">Nur<b>tura</b></a>
+<div class="links"><a href="#journey">My Journey</a><a href="#chat">Ask Nurtura</a><a href="#checkin">Wellbeing</a><a href="#resources">Resources</a></div>
+<button class="qe" id="qe" aria-label="Discreet exit">↗ Discreet Exit</button>
+<a class="pill" href="#chat" style="display:grid;place-items:center">Ask us</a>
+</div></nav>
+<main id="top">
+<section class="hero"><div class="wrap">
+<span class="tag rv">A little support for your motherhood journey</span>
+<h1 class="rv">Care for you, through <span class="grad">every stage.</span></h1>
+<p class="sub rv">A calm, supportive space for women preparing for pregnancy and mothers navigating recovery, wellbeing and the changes after childbirth.</p>
+<div class="row rv"><a class="btn v" href="#journey" style="display:inline-flex;align-items:center">Explore your support</a><a class="btn" href="#chat" style="display:inline-flex;align-items:center;background:var(--card);border:1px solid var(--line)">Talk to Nurtura</a></div>
+<p id="status" class="hint rv">You deserve care and support, too.</p>
+</div></section>
+<section id="journey"><div class="wrap">
+<span class="tag rv">Your journey</span><h2 class="rv">Where are you right now?</h2><p class="sub rv">Choose the stage that feels most relevant. You can change it whenever your needs change.</p>
+<div class="grid2">
+<button class="card stage rv" data-stage="Planning"><div style="font-size:2rem">🌱</div><h3>Preparing for pregnancy</h3><p class="hint">Understand health, nutrition, lifestyle and what to expect.</p></button>
+<button class="card stage rv" data-stage="Postpartum"><div style="font-size:2rem">🌷</div><h3>After childbirth</h3><p class="hint">Explore recovery, rest, emotional changes and self-care.</p></button>
+</div><p class="hint" id="stageStatus">Your selected journey will appear here.</p>
+</div></section>
+<section id="chat"><div class="wrap" style="max-width:760px">
+<span class="tag rv">Ask Nurtura</span><h2 class="rv">A space for your questions.</h2><p class="sub rv">Choose a prompt or type a question. This first prototype uses sample educational responses, not medical diagnosis.</p>
+<div class="card rv"><div id="chatlog" class="chatlog"><p class="chatbubble">Nurtura: Hi. What would you like to understand today?</p></div>
+<div class="chips"><button class="chip prompt">What should I know before pregnancy?</button><button class="chip prompt">What can recovery after childbirth involve?</button><button class="chip prompt">How can I make time for rest?</button></div>
+<div style="display:flex;gap:8px"><input id="chatinput" type="text" placeholder="Type your question…" style="margin:0"><button class="btn v" id="sendchat">Send</button></div>
+<p class="hint">For urgent symptoms or medical concerns, contact a qualified healthcare professional or emergency service.</p></div>
+</div></section>
+<section id="checkin"><div class="wrap" style="max-width:640px">
+<span class="tag rv">Emotional wellbeing</span><h2 class="rv">How are you feeling today?</h2><p class="sub rv">A small moment to check in with yourself. Your answers stay in this demo and are not saved.</p>
+<div class="card rv" id="form"><div class="steps"><i class="on"></i><i></i><i></i></div>
+<div class="pane show"><h3 style="margin-bottom:12px">1 · Choose what feels closest</h3><button class="opt">😊 Good and hopeful</button><button class="opt">😐 A little overwhelmed</button><button class="opt">😔 Low or emotionally drained</button><button class="opt">😟 Anxious or worried</button><button class="btn v next" style="width:100%">Continue</button></div>
+<div class="pane"><h3 style="margin-bottom:12px">2 · What has been on your mind?</h3><button class="opt">My physical recovery</button><button class="opt">Sleep, rest or exhaustion</button><button class="opt">Changes in mood</button><button class="opt">Adjusting to new responsibilities</button><button class="btn v next" style="width:100%">Continue</button></div>
+<div class="pane"><h3 style="margin-bottom:12px">3 · What kind of support would help?</h3><button class="opt on">Gentle self-care suggestions</button><button class="opt">Information and resources</button><button class="opt">Encouragement to speak to a professional</button><button class="btn v next" style="width:100%">Save check-in</button></div>
+<div class="pane" style="text-align:center"><div style="font-size:3rem">🌷</div><h3>Thank you for checking in</h3><p class="sub" style="margin:8px auto 0">Your feelings matter. This prototype does not store your answers or assess your mental health.</p></div>
+<p class="hint">If you feel unsafe or are worried about your health, reach out to a trusted person or qualified professional.</p></div>
+</div></section>
+<section id="resources"><div class="wrap">
+<span class="tag rv">Learn &amp; find support</span><h2 class="rv">Helpful information, without the overwhelm.</h2>
+<input type="search" id="q" placeholder="Search topics (nutrition, recovery, emotional wellbeing…)" class="rv">
+<div class="bento" id="bento">
+<div class="card hl rv" data-k="pregnancy planning preparation"><span>🌱 Preparing for pregnancy</span><div class="num">01</div><a href="#journey">Explore</a></div>
+<div class="card hl rv" data-k="postpartum recovery childbirth"><span>🌷 Postpartum recovery</span><div class="num">02</div><a href="#journey">Explore</a></div>
+<div class="card hl rv" data-k="emotional mental wellbeing mood"><span>💗 Emotional wellbeing</span><div class="num">03</div><a href="#checkin">Check in</a></div>
+<div class="card hl rv" data-k="doctor hospital professional support"><span>🩺 Professional support</span><div class="num">04</div><a href="https://www.nhp.gov.in/" target="_blank" rel="noopener">Health portal</a></div>
+</div>
+<h3 style="margin:34px 0 14px" class="rv">A few things worth knowing</h3>
+<details class="rv"><summary>Why does maternal care include emotional wellbeing?</summary><p>Pregnancy and the period after childbirth can bring emotional as well as physical changes. Your feelings deserve attention and support, too.</p></details>
+<details class="rv"><summary>When should I seek professional advice?</summary><p>Speak with a qualified healthcare professional if you have symptoms that worry you, questions about recovery, or emotional distress that feels difficult to manage. Seek urgent care for emergencies.</p></details>
+<details class="rv"><summary>Can Nurtura replace a doctor?</summary><p>No. Nurtura is intended for general education and support. It cannot diagnose, prescribe treatment or replace personalised medical care.</p></details>
+</div></section>
+</main>
+<footer><div class="wrap"><div class="row" style="justify-content:space-between;align-items:center;gap:20px">
+<div><b style="color:var(--tx)">Nurtura</b><br>Gentle, accessible maternal information and support.<br>For education and wellbeing support — not a substitute for medical care.</div>
+<button class="btn v" id="dl">⬇ Download care checklist</button></div></div></footer>
+<div id="call"><div><div class="av">N</div><h2>A gentle reminder</h2><p id="callst">Take a moment for yourself.</p></div><div class="row" style="gap:30px"><button class="cb" style="background:#C9828B" id="dec">✕</button><button class="cb" style="background:#71866D" id="acc">✓</button></div></div>
+<div id="decoy"><p>A little pause</p><h3>🌿</h3><p>Breathe in. Breathe out.</p><p style="margin-top:40px;font-size:.85rem">Tap anywhere to return</p></div>
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.12});
+$$('.rv').forEach(e=>io.observe(e));
+$$('.stage').forEach(b=>b.addEventListener('click',()=>{
+ $$('.stage').forEach(x=>{x.style.borderColor='var(--line)';x.style.background='var(--card)'});
+ b.style.borderColor='var(--vio)';b.style.background='rgba(138,155,131,.10)';
+ $('#stageStatus').textContent='Your selected stage: '+b.dataset.stage+'. You can change this selection at any time.';
+ $('#status').textContent='Your '+b.dataset.stage.toLowerCase()+' support space is ready to explore.';
+}));
+function respond(q){
+ const s=q.toLowerCase();
+ if(s.includes('pregnan')||s.includes('planning')) return 'If you are preparing for pregnancy, it can help to discuss your plans and health history with a healthcare professional. You can ask about nutrition, medicines, vaccinations and lifestyle habits that are relevant to you. This is general information, not personal medical advice.';
+ if(s.includes('recover')||s.includes('childbirth')||s.includes('postpartum')) return 'Recovery after childbirth is different for everyone. Rest, follow-up care, nutrition and support from people around you can all matter. If you have symptoms that worry you, contact a healthcare professional promptly.';
+ if(s.includes('rest')||s.includes('sleep')||s.includes('tired')) return 'It can be difficult to rest when there is so much to manage. If possible, ask someone you trust to take over one small task, rest when support is available, and bring ongoing exhaustion up at your health check-up. You deserve care as well.';
+ if(s.includes('sad')||s.includes('anxious')||s.includes('overwhelm')||s.includes('mood')) return 'Thank you for sharing that. Emotional changes can happen during pregnancy and after childbirth, but you do not have to manage difficult feelings alone. Consider talking with someone you trust and a qualified health or mental-health professional, especially if these feelings persist or become intense.';
+ return 'That is a good question to bring to your care team. I can offer general educational information, but I cannot assess symptoms or give a diagnosis. A qualified healthcare professional can help with advice that fits your situation.';
+}
+function sendChat(value){
+ const q=value.trim();if(!q)return;const log=$('#chatlog');
+ const you=document.createElement('p');you.className='chatbubble';you.textContent='You: '+q;
+ const ans=document.createElement('p');ans.className='chatbubble';ans.textContent='Nurtura: '+respond(q);
+ log.append(you,ans);log.scrollTop=log.scrollHeight;$('#chatinput').value='';
+}
+$('#sendchat').onclick=()=>sendChat($('#chatinput').value);
+$('#chatinput').addEventListener('keydown',e=>{if(e.key==='Enter')sendChat($('#chatinput').value)});
+$$('.prompt').forEach(b=>b.onclick=()=>sendChat(b.textContent));
+let step=0;const panes=$$('#form .pane'),bars=$$('#form .steps i');
+$$('#form .opt').forEach(o=>o.onclick=()=>{[...o.parentNode.children].filter(x=>x.classList&&x.classList.contains('opt')).forEach(x=>x.classList.remove('on'));o.classList.add('on')});
+$$('#form .next').forEach(b=>b.onclick=()=>{panes[step].classList.remove('show');step++;panes[step].classList.add('show');bars.forEach((x,i)=>x.classList.toggle('on',i<=Math.min(step,2)))});
+$('#q').oninput=e=>{const v=e.target.value.toLowerCase();$$('.hl').forEach(c=>{const m=c.textContent.toLowerCase().includes(v)||c.dataset.k.includes(v);c.style.display=m?'flex':'none'})};
+const call=$('#call');$('#fake')?.addEventListener('click',()=>call.classList.add('show'));
+$('#dec').onclick=()=>call.classList.remove('show');$('#acc').onclick=()=>{call.classList.remove('show');$('#status').textContent='A small pause can be a form of care.'};
+const dc=$('#decoy');const qx=()=>{dc.classList.add('show');call.classList.remove('show')};
+$('#qe').onclick=qx;dc.onclick=()=>dc.classList.remove('show');
+addEventListener('keydown',e=>{if(e.key==='Escape')dc.classList.contains('show')?dc.classList.remove('show'):qx()});
+$('#dl').onclick=()=>{const t='NURTURA — GENTLE CARE CHECKLIST\n\n[ ] Make time for a meal and water\n[ ] Keep track of questions for your next health appointment\n[ ] Ask a trusted person for practical support\n[ ] Make space for rest when possible\n[ ] Check in with how you are feeling\n[ ] Contact a qualified professional about symptoms or concerns\n\nThis checklist is general information, not medical advice.\n';const a=document.createElement('a');a.href='data:text/plain;charset=utf-8,'+encodeURIComponent(t);a.download='nurtura-care-checklist.txt';a.click()};
+</script>
+</body></html>
